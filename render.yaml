@@ -4,7 +4,7 @@ services:
     env: go
     plan: free
     buildCommand: go build -tags netgo -ldflags "-s -w" -o app
-    startCommand: ./app --config ./wakapi.yml --listen 0.0.0.0:$PORT
+    startCommand: ./app --config ./wakapi.yml
     envVars:
       - key: PORT
         value: 10000
