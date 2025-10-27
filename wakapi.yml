@@ -3,3 +3,7 @@ server:
   public_url: https://wakapi-yourteam.onrender.com
   password_salt: random_salt
   password_pepper: random_pepper
+  
+storage:
+  driver: postgres
+  dsn: postgresql://neondb_owner:npg_rhUHgZS2wa8n@ep-sparkling-night-ad48ic9h-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
