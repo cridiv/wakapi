@@ -343,16 +343,20 @@ func main() {
 func listen(handler http.Handler) {
 	var s4, s6, sSocket *http.Server
 
-	// IPv4
-	if config.Server.ListenIpV4 != "-" && config.Server.ListenIpV4 != "" {
-		bindString4 := config.Server.ListenIpV4 + ":" + strconv.Itoa(config.Server.Port)
-		s4 = &http.Server{
-			Handler:      handler,
-			Addr:         bindString4,
-			ReadTimeout:  time.Duration(config.Server.TimeoutSec) * time.Second,
-			WriteTimeout: time.Duration(config.Server.TimeoutSec) * time.Second,
-		}
+// IPv4
+if config.Server.ListenIpV4 != "-" && config.Server.ListenIpV4 != "" {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = strconv.Itoa(config.Server.Port)
 	}
+	bindString4 := "0.0.0.0:" + port
+	s4 = &http.Server{
+		Handler:      handler,
+		Addr:         bindString4,
+		ReadTimeout:  time.Duration(config.Server.TimeoutSec) * time.Second,
+		WriteTimeout: time.Duration(config.Server.TimeoutSec) * time.Second,
+	}
+}
 
 	// IPv6
 	if config.Server.ListenIpV6 != "-" && config.Server.ListenIpV6 != "" {
