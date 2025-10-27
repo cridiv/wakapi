@@ -1,0 +1,7 @@
+server:
+  listen: 0.0.0.0:${PORT}
+  public_url: https://wakapi-7tfd.onrender.com
+
+database:
+  dialect: sqlite
+  connection: wakapi.db
