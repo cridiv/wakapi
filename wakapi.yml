@@ -1,5 +1,5 @@
 server:
-  listen: 0.0.0.0:${PORT}
+  listen: 0.0.0.0:10000
   public_url: https://wakapi-7tfd.onrender.com
 
 database:
