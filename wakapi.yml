@@ -1,7 +1,5 @@
 server:
-  listen: 0.0.0.0:10000
-  public_url: https://wakapi-7tfd.onrender.com
-
-database:
-  dialect: sqlite
-  connection: wakapi.db
+  listen: 0.0.0.0:${PORT}
+  public_url: https://wakapi-yourteam.onrender.com
+  password_salt: random_salt
+  password_pepper: random_pepper
