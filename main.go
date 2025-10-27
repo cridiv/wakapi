@@ -6,6 +6,7 @@ import (
 	"io/fs"
 	"log"
 	"log/slog"
+	"fmt"
 	"net"
 	"net/http"
 	"os"
@@ -136,6 +137,8 @@ func main() {
 			LogLevel:      logger.Silent,
 		},
 	)
+
+	fmt.Println("Server starting on:", os.Getenv("PORT"))
 
 	// Connect to database
 	var err error
